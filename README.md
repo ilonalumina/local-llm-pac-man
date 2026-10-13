@@ -15,6 +15,7 @@ Every game is published as delivered, without manual code changes, so you can pl
 <tr>
 <td width="33%"><a href="#qwen3.8-27b-mxfp4-dsh-xhigh"><img src="runs/qwen3.8-27b-mxfp4-dsh-xhigh/screenshots/card.png" alt="Qwen3.8-27B (MXFP4) on R9700 (USB4), DSH, XHigh" width="100%"></a></td>
 <td width="33%"><a href="#qwen3.8-flash-next-nvfp4-dsh-medium"><img src="runs/qwen3.8-flash-next-nvfp4-dsh-medium/screenshots/card.png" alt="Qwen3.8-Flash-Next (NVFP4) on 2× DGX Spark, DSH, Medium" width="100%"></a></td>
+<td width="33%"><a href="#deepseek-v4.1-flash-exl3-2.8bpw-dsh-max"><img src="runs/deepseek-v4.1-flash-exl3-2.8bpw-dsh-max/screenshots/card.png" alt="DeepSeek-V4.1-Flash (EXL3 2.8 bpw) on 2× DGX Spark, TensorFold, DSH, Max" width="100%"></a></td>
 </tr>
 </table>
 
@@ -66,7 +67,7 @@ Prefill and decode are averages over the whole run. Prefill is the prompt tokens
 (prefix-cache hits excluded) over the time to first token (Halogen: its prompt-processing time);
 decode is the output tokens over their generation time. Output tokens include the model's reasoning.
 Time runs from the prompt to the model's final answer, taken from the harness's own session log.
-Each Quant links to that run's notes under The Runs; ▶ opens its game.
+Each Quant links to that run's notes under The Runs.
 
 ### AMD Strix Halo
 
@@ -75,9 +76,9 @@ decoding with the model's MTP head.
 
 #### Qwen3.8-Flash-Next
 
-| Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time | Play |
-|---|---|---|---|--:|--:|--:|--:|--:|:-:|
-| [W4B (HGN)](#qwen3.8-flash-next-w4b-hgn-omp-xhigh) | Halogen | OMP | XHigh | 965 t/s | 39.9 t/s | 3.52M | 0.26M | 117m06s | [▶](https://ilonalumina.github.io/local-llm-pac-man/runs/qwen3.8-flash-next-w4b-hgn-omp-xhigh/) |
+| Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time |
+|---|---|---|---|---|---|---|---|---|
+| [W4B (HGN)](#qwen3.8-flash-next-w4b-hgn-omp-xhigh) | Halogen | OMP | XHigh | 965 t/s | 39.9 t/s | 3.52M | 0.26M | 117m06s |
 
 ### 2× NVIDIA DGX Spark
 
@@ -87,21 +88,22 @@ speculative decoding.
 
 #### DeepSeek-V4.1-Flash
 
-| Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time | Play |
-|---|---|---|---|--:|--:|--:|--:|--:|:-:|
-| [EXL3 2.9 bpw](#deepseek-v4.1-flash-exl3-2.9bpw-dsh-max) | vLLM | DSH | Max | 575 t/s | 36.3 t/s | 7.00M | 0.15M | 79m47s | [▶](https://ilonalumina.github.io/local-llm-pac-man/runs/deepseek-v4.1-flash-exl3-2.9bpw-dsh-max/) |
+| Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time |
+|---|---|---|---|---|---|---|---|---|
+| [EXL3 2.8 bpw](#deepseek-v4.1-flash-exl3-2.8bpw-dsh-max) | TensorFold | DSH | Max | 840 t/s | 75.3 t/s | 8.96M | 0.16M | 40m09s |
+| [EXL3 2.9 bpw](#deepseek-v4.1-flash-exl3-2.9bpw-dsh-max) | vLLM | DSH | Max | 575 t/s | 36.3 t/s | 7.00M | 0.15M | 79m47s |
 
 #### GLM-5.3-Flash
 
-| Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time | Play |
-|---|---|---|---|--:|--:|--:|--:|--:|:-:|
-| [EXL3 4 bpw](#glm-5.3-flash-exl3-4bpw-zcode-max) | vLLM | ZCode | Max | 976 t/s | 29.0 t/s | 2.86M | 0.11M | 65m58s | [▶](https://ilonalumina.github.io/local-llm-pac-man/runs/glm-5.3-flash-exl3-4bpw-zcode-max/) |
+| Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time |
+|---|---|---|---|---|---|---|---|---|
+| [EXL3 4 bpw](#glm-5.3-flash-exl3-4bpw-zcode-max) | vLLM | ZCode | Max | 976 t/s | 29.0 t/s | 2.86M | 0.11M | 65m58s |
 
 #### Qwen3.8-Flash-Next
 
-| Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time | Play |
-|---|---|---|---|--:|--:|--:|--:|--:|:-:|
-| [NVFP4](#qwen3.8-flash-next-nvfp4-dsh-medium) | vLLM | DSH | Medium | 2,281 t/s | 41.9 t/s | 2.99M | 0.07M | 27m34s | [▶](https://ilonalumina.github.io/local-llm-pac-man/runs/qwen3.8-flash-next-nvfp4-dsh-medium/) |
+| Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time |
+|---|---|---|---|---|---|---|---|---|
+| [NVFP4](#qwen3.8-flash-next-nvfp4-dsh-medium) | vLLM | DSH | Medium | 2,281 t/s | 41.9 t/s | 2.99M | 0.07M | 27m34s |
 
 ### Radeon AI Pro R9700 (USB4)
 
@@ -110,20 +112,22 @@ vLLM ran speculative decoding with a DFlash drafter.
 
 #### Qwen3.8-27B
 
-| Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time | Play |
-|---|---|---|---|--:|--:|--:|--:|--:|:-:|
-| [MXFP4](#qwen3.8-27b-mxfp4-dsh-xhigh) | vLLM ROCm | DSH | XHigh | 1,462 t/s | 90.8 t/s | 6.07M | 0.14M | 30m31s | [▶](https://ilonalumina.github.io/local-llm-pac-man/runs/qwen3.8-27b-mxfp4-dsh-xhigh/) |
+| Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time |
+|---|---|---|---|---|---|---|---|---|
+| [MXFP4](#qwen3.8-27b-mxfp4-dsh-xhigh) | vLLM ROCm | DSH | XHigh | 1,462 t/s | 90.8 t/s | 6.07M | 0.14M | 30m31s |
 
 **Components:**
 - Models: [Qwen3.8-Flash-Next NVFP4](https://huggingface.co/nvidia/Qwen3.8-Flash-Next-NVFP4) (NVIDIA),
   [DeepSeek-V4.1-Flash EXL3 2.9 bpw](https://huggingface.co/Mia-AiLab/DeepSeek-V4.1-Flash-EXL3-2.9bpw) (Mia-AiLab),
   GLM-5.3-Flash EXL3 4 bpw (Mia-AiLab),
   [Qwen3.8-27B MXFP4](https://huggingface.co/amd/Qwen3.8-27B-Quark-AWQ-MXFP4) (AMD),
-  [Qwen3.8-Flash-Next for Halogen](https://huggingface.co/peonist-ai/halogen-qwen3.8-flash-next) (peonist-ai).
+  [Qwen3.8-Flash-Next for Halogen](https://huggingface.co/peonist-ai/halogen-qwen3.8-flash-next) (peonist-ai),
+  [DeepSeek-V4.1-Flash EXL3 2.8 bpw](https://huggingface.co/jayleaton/DeepSeek-V4.1-Flash-EXL3-2.8bpw) (jayleaton).
 - Serving recipes and engines: [GLM-5.3-Flash-EXL3-2x-DGX-Sparks](https://github.com/MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks),
   [DeepSeek-v4.1-Flash-EXL3-2x-DGX-Sparks](https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-EXL3-2x-DGX-Sparks),
   [vllm-mxfp4](https://github.com/GGZ14/vllm-mxfp4) (GGZ14),
-  [Halogen flash server](https://github.com/peonist-ai/halogen-flash-server) (peonist-ai).
+  [Halogen flash server](https://github.com/peonist-ai/halogen-flash-server) (peonist-ai),
+  [deepseek-v41-tensorfold-spark](https://github.com/jayleaton/deepseek-v41-tensorfold-spark) (jayleaton).
 - Harnesses: [DeepSeek Harness](https://www.deepseek.com/en/harness/) (DeepSeek), [ZCode](https://zcode.z.ai/en) (Z.ai),
   [OMP](https://omp.sh/) (oh-my-pi).
 
@@ -149,7 +153,7 @@ reasoning. 70 tool calls (11 returned errors), one context compaction, 1 h 57 mi
 3.5 million prompt tokens were served from the prefix cache.
 
 [▶ Play](https://ilonalumina.github.io/local-llm-pac-man/runs/qwen3.8-flash-next-w4b-hgn-omp-xhigh/) ·
-[source](runs/qwen3.8-flash-next-w4b-hgn-omp-xhigh/pacman.html)
+[Source](runs/qwen3.8-flash-next-w4b-hgn-omp-xhigh/pacman.html)
 
 </td>
 <td width="35%"><a href="https://ilonalumina.github.io/local-llm-pac-man/runs/qwen3.8-flash-next-w4b-hgn-omp-xhigh/"><img src="runs/qwen3.8-flash-next-w4b-hgn-omp-xhigh/screenshots/card.png" width="100%" alt="Play this game"></a></td>
@@ -159,6 +163,30 @@ reasoning. 70 tool calls (11 returned errors), one context compaction, 1 h 57 mi
 ### 2× NVIDIA DGX Spark
 
 #### DeepSeek-V4.1-Flash
+
+<a name="deepseek-v4.1-flash-exl3-2.8bpw-dsh-max"></a>
+
+<table>
+<tr>
+<td valign="top" width="65%">
+
+##### EXL3 2.8 bpw, TensorFold, DSH, Max
+
+DeepSeek worked out the maze, the start tile and the ghost-house exit lane from its own knowledge of
+the arcade game; web search was available and not called. It wrote a headless Node harness that runs
+the game's own script against a stubbed DOM (89 assertions plus random-input soak runs) and fixed the
+three bugs it found. It then served the file locally, opened it in the harness's browser, drove it
+from an instrumented test page and looked at its own screenshots (4 page loads, 2 screenshots, 2 image
+reads). 41 tool calls, zero errors, no context compaction, 40 min 9 s. 97.4% of its 9.0 million prompt
+tokens were served from the prefix cache.
+
+[▶ Play](https://ilonalumina.github.io/local-llm-pac-man/runs/deepseek-v4.1-flash-exl3-2.8bpw-dsh-max/) ·
+[Source](runs/deepseek-v4.1-flash-exl3-2.8bpw-dsh-max/pacman.html)
+
+</td>
+<td width="35%"><a href="https://ilonalumina.github.io/local-llm-pac-man/runs/deepseek-v4.1-flash-exl3-2.8bpw-dsh-max/"><img src="runs/deepseek-v4.1-flash-exl3-2.8bpw-dsh-max/screenshots/card.png" width="100%" alt="Play this game"></a></td>
+</tr>
+</table>
 
 <a name="deepseek-v4.1-flash-exl3-2.9bpw-dsh-max"></a>
 
@@ -177,7 +205,7 @@ sandboxed Chrome). 69 tool calls, 80 minutes. 97.5% of its 7.0 million prompt to
 the prefix cache.
 
 [▶ Play](https://ilonalumina.github.io/local-llm-pac-man/runs/deepseek-v4.1-flash-exl3-2.9bpw-dsh-max/) ·
-[source](runs/deepseek-v4.1-flash-exl3-2.9bpw-dsh-max/pacman.html)
+[Source](runs/deepseek-v4.1-flash-exl3-2.9bpw-dsh-max/pacman.html)
 
 </td>
 <td width="35%"><a href="https://ilonalumina.github.io/local-llm-pac-man/runs/deepseek-v4.1-flash-exl3-2.9bpw-dsh-max/"><img src="runs/deepseek-v4.1-flash-exl3-2.9bpw-dsh-max/screenshots/card.png" width="100%" alt="Play this game"></a></td>
@@ -201,7 +229,7 @@ references. 28 tool calls, zero errors, 66 minutes. 96.4% of its 2.9 million pro
 from the prefix cache.
 
 [▶ Play](https://ilonalumina.github.io/local-llm-pac-man/runs/glm-5.3-flash-exl3-4bpw-zcode-max/) ·
-[source](runs/glm-5.3-flash-exl3-4bpw-zcode-max/pacman.html)
+[Source](runs/glm-5.3-flash-exl3-4bpw-zcode-max/pacman.html)
 
 </td>
 <td width="35%"><a href="https://ilonalumina.github.io/local-llm-pac-man/runs/glm-5.3-flash-exl3-4bpw-zcode-max/"><img src="runs/glm-5.3-flash-exl3-4bpw-zcode-max/screenshots/card.png" width="100%" alt="Play this game"></a></td>
@@ -223,7 +251,7 @@ the page text and ran script in the page (10 browser calls). 46 tool calls, 66K 
 27½ minutes. 95.1% of its 3.0 million prompt tokens were served from the prefix cache.
 
 [▶ Play](https://ilonalumina.github.io/local-llm-pac-man/runs/qwen3.8-flash-next-nvfp4-dsh-medium/) ·
-[source](runs/qwen3.8-flash-next-nvfp4-dsh-medium/pacman.html)
+[Source](runs/qwen3.8-flash-next-nvfp4-dsh-medium/pacman.html)
 
 </td>
 <td width="35%"><a href="https://ilonalumina.github.io/local-llm-pac-man/runs/qwen3.8-flash-next-nvfp4-dsh-medium/"><img src="runs/qwen3.8-flash-next-nvfp4-dsh-medium/screenshots/card.png" width="100%" alt="Play this game"></a></td>
@@ -248,7 +276,7 @@ image reads). 38 tool calls, one context compaction, 30 min 31 s. 93.7% of its 6
 tokens were served from the prefix cache.
 
 [▶ Play](https://ilonalumina.github.io/local-llm-pac-man/runs/qwen3.8-27b-mxfp4-dsh-xhigh/) ·
-[source](runs/qwen3.8-27b-mxfp4-dsh-xhigh/pacman.html)
+[Source](runs/qwen3.8-27b-mxfp4-dsh-xhigh/pacman.html)
 
 </td>
 <td width="35%"><a href="https://ilonalumina.github.io/local-llm-pac-man/runs/qwen3.8-27b-mxfp4-dsh-xhigh/"><img src="runs/qwen3.8-27b-mxfp4-dsh-xhigh/screenshots/card.png" width="100%" alt="Play this game"></a></td>
