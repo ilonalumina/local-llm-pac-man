@@ -6,6 +6,8 @@ Each run starts with the same prompt. The model works through an agent harness w
 
 Every game is published as delivered, without manual code changes, so you can play and compare the results.
 
+Some of our favorites:
+
 <table>
 <tr>
 <td width="33%"><a href="#qwen3.8-flash-next-w4b-hgn-omp-xhigh"><img src="runs/qwen3.8-flash-next-w4b-hgn-omp-xhigh/screenshots/card.png" alt="Qwen3.8-Flash-Next (W4B (HGN)) on Strix Halo, OMP, XHigh" width="100%"></a></td>
@@ -13,7 +15,7 @@ Every game is published as delivered, without manual code changes, so you can pl
 <td width="33%"><a href="#deepseek-v4.1-flash-exl3-2.9bpw-dsh-max"><img src="runs/deepseek-v4.1-flash-exl3-2.9bpw-dsh-max/screenshots/card.png" alt="DeepSeek-V4.1-Flash (EXL3 2.9 bpw) on 2× DGX Spark, DSH, Max" width="100%"></a></td>
 </tr>
 <tr>
-<td width="33%"><a href="#qwen3.8-27b-mxfp4-dsh-xhigh"><img src="runs/qwen3.8-27b-mxfp4-dsh-xhigh/screenshots/card.png" alt="Qwen3.8-27B (MXFP4) on R9700 (USB4), DSH, XHigh" width="100%"></a></td>
+<td width="33%"><a href="#glm-5.3-flash-exl3-4bpw-tensorfold-zcode-max"><img src="runs/glm-5.3-flash-exl3-4bpw-tensorfold-zcode-max/screenshots/card.png" alt="GLM-5.3-Flash (EXL3 4 bpw) on 2× DGX Spark, TensorFold, ZCode, Max" width="100%"></a></td>
 <td width="33%"><a href="#qwen3.8-flash-next-nvfp4-dsh-medium"><img src="runs/qwen3.8-flash-next-nvfp4-dsh-medium/screenshots/card.png" alt="Qwen3.8-Flash-Next (NVFP4) on 2× DGX Spark, DSH, Medium" width="100%"></a></td>
 <td width="33%"><a href="#deepseek-v4.1-flash-exl3-2.8bpw-dsh-max"><img src="runs/deepseek-v4.1-flash-exl3-2.8bpw-dsh-max/screenshots/card.png" alt="DeepSeek-V4.1-Flash (EXL3 2.8 bpw) on 2× DGX Spark, TensorFold, DSH, Max" width="100%"></a></td>
 </tr>
@@ -97,6 +99,7 @@ speculative decoding.
 
 | Quant | Engine | Harness | Effort | Prefill | Decode | In Tok | Out Tok | Time |
 |---|---|---|---|---|---|---|---|---|
+| [EXL3 4 bpw](#glm-5.3-flash-exl3-4bpw-tensorfold-zcode-max) | TensorFold | ZCode | Max | 1,608 t/s | 53.5 t/s | 4.53M | 0.12M | 38m37s |
 | [EXL3 4 bpw](#glm-5.3-flash-exl3-4bpw-zcode-max) | vLLM | ZCode | Max | 976 t/s | 29.0 t/s | 2.86M | 0.11M | 65m58s |
 
 #### Qwen3.8-Flash-Next
@@ -213,6 +216,30 @@ the prefix cache.
 </table>
 
 #### GLM-5.3-Flash
+
+<a name="glm-5.3-flash-exl3-4bpw-tensorfold-zcode-max"></a>
+
+<table>
+<tr>
+<td valign="top" width="65%">
+
+##### EXL3 4 bpw, TensorFold, ZCode, Max
+
+GLM wrote pacman.html in one pass and never edited it. It then wrote a headless Node harness that
+runs the game's logic, with a random-input bot playing it, and ran it four times; the failures it
+reported were in the harness's own checks, which it corrected between runs. It confirmed the file has
+no external references, rendered test copies in headless Chromium from the shell and looked at its own
+screenshots of the title screen, play and frightened mode (4 image reads). 25 tool calls, zero errors,
+no context compaction, 38 min 37 s. 95.7% of its 4.5 million prompt tokens were served from the
+prefix cache.
+
+[▶ Play](https://ilonalumina.github.io/local-llm-pac-man/runs/glm-5.3-flash-exl3-4bpw-tensorfold-zcode-max/) ·
+[Source](runs/glm-5.3-flash-exl3-4bpw-tensorfold-zcode-max/pacman.html)
+
+</td>
+<td width="35%"><a href="https://ilonalumina.github.io/local-llm-pac-man/runs/glm-5.3-flash-exl3-4bpw-tensorfold-zcode-max/"><img src="runs/glm-5.3-flash-exl3-4bpw-tensorfold-zcode-max/screenshots/card.png" width="100%" alt="Play this game"></a></td>
+</tr>
+</table>
 
 <a name="glm-5.3-flash-exl3-4bpw-zcode-max"></a>
 
